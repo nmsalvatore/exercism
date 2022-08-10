@@ -1,7 +1,7 @@
 VERSES = {
-    1: ('that lay in', 'the house that Jack built.'),
-    2: ('that ate', 'the malt'),
-    3: ('that killed', 'the rat'),
+    1: ('that lay in ', 'the house that Jack built.'),
+    2: ('that ate ', 'the malt '),
+    3: ('that killed ', 'the rat '),
     4: ('that worried ', 'the cat '),
     5: ('that tossed ', 'the dog '),
     6: ('that milked ', 'the cow with the crumpled horn '),
@@ -17,9 +17,9 @@ def get_verse(verse_num):
     verse = ''
     for num in range(verse_num, 0, -1):
         if num == verse_num:
-            verse += f'This is {VERSES.get(verse_num)[1]}'
+            verse += 'This is ' + VERSES.get(verse_num)[1]
         else:
-            verse += f'{VERSES.get(num)[0]} {VERSES.get(num)[1]}'
+            verse += ''.join(VERSES.get(num))
     
     return verse
 
@@ -30,6 +30,3 @@ def recite(start_verse, end_verse):
         verses.append(verse)
     
     return verses
-
-print( get_verse(3) )
-
